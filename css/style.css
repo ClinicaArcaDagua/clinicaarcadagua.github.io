@@ -3,3 +3,11 @@ body {
 	padding: 0;
 	background-color: #2BB7C4;
 }
+
+img {
+	padding-top: 20%;
+	display: block;
+    margin: auto;
+	height: 20%;
+	width: 20%;
+}

@@ -1,0 +1,7 @@
+# Clinica Arca Dagua - .gitignore file
+
+# Mac file
+.DS_Store
+
+# Visual Studio Code
+typings/*
