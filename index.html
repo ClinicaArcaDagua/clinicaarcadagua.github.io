@@ -10,6 +10,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" type="text/css" href="assets/css/sweetalert.css">
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
@@ -156,19 +157,19 @@
 										<h2>Contactos</h2>
 										<p>Envia-nos uma mensagem</p>
 										<div class="field half first">
-											<label for="name">Nome</label>
-											<input type="text" name="name" id="name" />
+											<label for="contactName">Nome</label>
+											<input type="text" name="contactName" id="contactName" maxlength="50" />
 										</div>
 										<div class="field half">
-											<label for="email">Email</label>
-											<input type="text" name="email" id="email" />
+											<label for="contactEmail">Email</label>
+											<input type="email" name="contactEmail" id="contactEmail" maxlength="50" />
 										</div>
 										<div class="field">
 											<label for="message">Mensagem</label>
-											<textarea name="message" id="message" rows="5"></textarea>
+											<textarea name="message" id="message" rows="5" maxlength="350"></textarea>
 										</div>
 										<ul class="actions">
-											<li><a class="button submit" onclick="sendEnquire();">Enviar</a></li>
+											<li><a class="button" onclick="Rrmd().sendEnquire();">Enviar</a></li>
 										</ul>
 									</form>
 								</section>
@@ -228,6 +229,7 @@
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/sweetalert.min.js"></script>
 			<script src="assets/js/main.js"></script>
 			<script src="assets/js/custom.js"></script>
 
