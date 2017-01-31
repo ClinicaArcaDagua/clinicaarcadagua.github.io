@@ -1892,13 +1892,13 @@
 		-ms-transition: border-color 0.2s ease;
 		transition: border-color 0.2s ease;
 		background-color: transparent;
-		border: solid 1px !important;
+		border: solid 2px !important;
 		border-color: rgba(255, 255, 255, 0.15) !important;
 		border-radius: 3em;
 		color: #ffffff !important;
 		cursor: pointer;
 		display: inline-block;
-		font-size: 0.6em;
+		font-size: 0.7em;
 		font-weight: bold;
 		height: calc(4.75em + 2px);
 		letter-spacing: 0.25em;
@@ -2013,7 +2013,7 @@
 		input[type="button"]:hover,
 		button:hover,
 		.button:hover {
-			border-color: rgba(255, 255, 255, 0.55) !important;
+			border-color: #ffffff !important;
 		}
 
 			input[type="submit"]:hover:after,
@@ -2658,7 +2658,7 @@
 		}
 
 		.image.logo {
-			margin: 3px 100px 50px 25px;
+			margin: 7px 100px 50px 25px;
 			width: 170px;
 			height: 45px;
 		}
@@ -2669,15 +2669,14 @@
 			}
 
 		.image.mainlogo {
-			width: 320px;
-			height: 120px;
-			margin-left: 4%;
-			background: #2BB8CA;
+			width: 267px;
+			height: 70px;
+			margin: 20px 0 0 60px;
 		}
 
 			.image.mainlogo img {
-				width: 320px;
-				height: 120px;
+				width: 267px;
+				height: 70px;
 			}
 
 		.image.brevemente {
@@ -4287,13 +4286,21 @@
 
 			@media screen and (max-width: 980px) {
 
-				#intro p br {
-					display: none;
+				#intro {
+					background-image: url("images/intro_orig.svg");
 				}
 
 			}
 
 			@media screen and (max-width: 736px) {
+
+				#intro {
+					background-image: url("images/intro_orig.svg");
+				}
+
+				#intro .image.mainlogo {
+					margin: 20px 0 0 30px;
+				}
 
 				#intro p {
 					font-size: 1em;
