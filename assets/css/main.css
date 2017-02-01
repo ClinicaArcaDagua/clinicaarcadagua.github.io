@@ -3376,10 +3376,6 @@
 			background-color: #953d75;
 		}
 
-		.wrapper.style4 {
-			background-color: #2BB7C4;
-		}
-
 		.wrapper.fullscreen {
 			display: -moz-flex;
 			display: -webkit-flex;
@@ -4315,3 +4311,9 @@
 			}
 
 		}
+
+/* New Classes */
+
+	.justified {
+		text-align: justify;
+	}
