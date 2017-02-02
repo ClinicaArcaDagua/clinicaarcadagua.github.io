@@ -4287,7 +4287,7 @@
 			@media screen and (max-width: 980px) {
 
 				#intro {
-					background-image: url("images/intro_orig.svg");
+					background-image: url("images/introOrig.svg");
 				}
 
 			}
@@ -4295,7 +4295,7 @@
 			@media screen and (max-width: 736px) {
 
 				#intro {
-					background-image: url("images/intro_orig.svg");
+					background-image: url("images/introOrig.svg");
 				}
 
 				#intro .image.mainlogo {
