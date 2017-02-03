@@ -23,6 +23,15 @@
     /**
      * Private Variables and Functions
      */
+    $('#ricardoback').click(function() {
+        if ($('#ricardo').prop('src').split('/').pop() === 'ricardo.jpg') {
+            $('#ricardo').prop('src','images/team/ricardohappy.jpg');
+            $('#ricardoback').css({'background-image': 'url("images/team/ricardohappy.jpg")', 'background-position': 'center top'});
+        } else {
+            $('#ricardo').prop('src','images/team/ricardo.jpg');
+            $('#ricardoback').css({'background-image': 'url("images/team/ricardo.jpg")', 'background-position': 'center top'});
+        }
+    });
 
     
     /**
