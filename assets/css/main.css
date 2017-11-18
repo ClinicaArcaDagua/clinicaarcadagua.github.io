@@ -4314,7 +4314,13 @@
 				background-attachment: scroll;
 			}
 
-		}
+        }
+        
+/* Three */
+
+    #three p {
+        font-size: 0.9em;
+    }
 
 /* Promotion */
 
