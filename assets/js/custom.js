@@ -33,13 +33,11 @@
         }
     });*/
 
-    
     /**
      * Create a Prototype Chain
      * Public Variables and Functions
      */
     Rrmd.prototype = {
-        
         /**
          * Send Email
          */
@@ -51,28 +49,45 @@
                 return;
             }
 
-            var message = "Nome Contato: " + $("#contactName").val() + "\n\n" +
+            emailjs.send("gmail", "mensagem_site", { 
+                from_name: $("#contactName").val(),
+                from_email: $("#contactEmail").val(),
+                message_html: $("#message").val()})
+            .then(function(response) {
+                document.getElementById("contact").submit();
+            }, function(err) {
+                swal({
+                    title: "Erro!",
+                    text: "Não foi possivel enviar o email. Por favor tente novamente.",
+                    type: "error",
+                    confirmButtonText: "Ok"
+                });
+                console.log("FAILED. error=", err);
+            });
+
+            /*var message = "Nome Contato: " + $("#contactName").val() + "\n\n" +
                           "Mensagem: " + $("#message").val();
 
             var mail = {
                 _replyto: $("#contactEmail").val(),
                 _subject: "Requisicao do Site " + $("#contactName").val(),
                 message: message
-            };
+            };*/
 
-            $.ajax({
+            //this.sendEmail();
+
+            /*$.ajax({
                 url: "https://formspree.io/geral@clinicaarcadagua.com",
                 method: "POST",
                 data: mail,
                 dataType: "json",
                 success: function(data, textStatus, jqXHR) {
-                    document.getElementById("contact").submit();
-                    /*swal({
+                    swal({
                         title: "Mensagem enviada com sucesso!",
                         type: "success",
                         confirmButtonText: "Ok"
                     });
-                    self.clearFields();*/
+                    self.clearFields();
                 },
                 error: function(jqXHR, textStatus, errorThrown) {
                     swal({
@@ -82,15 +97,14 @@
                         confirmButtonText: "Ok"
                     });
                 }
-            });  
-            
+            });
+            */
         },
 
         /**
          * Validate Message
          */
         validateMessage: function() {
-            
             if ($("#contactName").val() === '') {
                 swal({
                     title: "Erro!",
@@ -123,7 +137,6 @@
             }
 
             return true;
-            
         },
         
         /**
@@ -135,8 +148,66 @@
             $('#contactEmail').val('');
             $('#message').val('');
             
+        },
+
+        /**
+         * Send Email
+         */
+        sendEmail: function() {
+            var message = {
+              to: {
+                name: "Ivan",
+                email: "tabarino@outlook.com"
+              },
+              from: {
+                name: "Clinica Arca Dagua",
+                email: "smtpjsclinicaarcadagua@gmail.com"
+              },
+              body: {
+                text: "test123",
+                html: "test123"
+              },
+              subject: "subject",
+            };
+            
+            var test = Base64.encode(this.createMimeMessage(message));
+
+            /*function sendMessage(userId, email, callback) {
+                // Using the js-base64 library for encoding:
+                // https://www.npmjs.com/package/js-base64
+                var base64EncodedEmail = Base64.encodeURI(email);
+                var request = gapi.client.gmail.users.messages.send({
+                  'userId': userId,
+                  'resource': {
+                    'raw': base64EncodedEmail
+                  }
+                });
+                request.execute(callback);
+              }*/
+        },          
+          
+        // Create a MIME message that complies with RFC 2822
+        createMimeMessage: function(msg) {
+            var nl = "\r\n";
+            var boundary = "__clinica__";
+          
+            var mimeBody = 
+                "MIME-Version: 1.0" + nl +
+                "To: " + msg.to.name + "<" + msg.to.email + ">" + nl +
+                "From: " + msg.from.name + "<" + msg.from.email + ">" + nl +
+                "Subject: " + msg.subject + nl +
+                "Content-Type: multipart/alternative; boundary=" + boundary + nl +
+                "--" + boundary + nl +
+                "Content-Type: text/plain" + nl +
+                msg.body.text + nl +
+                "--" + boundary + nl +
+                "Content-Type: text/html" + nl +
+                msg.body.html + nl +
+                "--" + boundary + "--";
+          
+            return mimeBody;
         }
-        
+
     };
     
     /**
