@@ -1984,7 +1984,7 @@
 		button.special,
 		.button.special {
 			background-color: #ffffff;
-			color: #312450 !important;
+			color: #5e42a6 !important;
 		}
 
 			input[type="submit"].special:after,
@@ -2668,6 +2668,16 @@
 		}
 
 			.image.logo img {
+				width: 170px;
+				height: 45px;
+            }
+        
+        .image.logothankyou {
+			width: 170px;
+			height: 45px;
+		}
+
+			.image.logothankyou img {
 				width: 170px;
 				height: 45px;
 			}

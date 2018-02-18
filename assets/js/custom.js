@@ -66,12 +66,13 @@
                 data: mail,
                 dataType: "json",
                 success: function(data, textStatus, jqXHR) {
-                    swal({
+                    document.getElementById("contact").submit();
+                    /*swal({
                         title: "Mensagem enviada com sucesso!",
                         type: "success",
                         confirmButtonText: "Ok"
                     });
-                    self.clearFields();
+                    self.clearFields();*/
                 },
                 error: function(jqXHR, textStatus, errorThrown) {
                     swal({
