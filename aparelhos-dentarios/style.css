@@ -155,6 +155,19 @@
     text-align: center;
 }
 
+ .banner1{
+        z-index: 1;
+    background-color: #b64e8f;
+    width: 60%;
+    height: auto;
+    padding: 1rem 1rem 3rem;
+    /* float: right; */
+    margin: auto;
+    position: inherit;
+    top: 30%;
+    text-align: center;
+}
+
  .form-cont{
      background-color: #34b9c9;
      width: 100%;
