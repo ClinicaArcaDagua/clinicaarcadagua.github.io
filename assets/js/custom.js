@@ -83,6 +83,16 @@
                 return false;
             }
 
+            if ($("#privacyAccept:checked").length === 0) {
+                swal({
+                    title: "Erro!",
+                    text: "Por favor, aceite a Política de Privacidade para enviar a mensagem!",
+                    type: "error",
+                    confirmButtonText: "Ok"
+                });
+                return false;
+            }
+
             return true;
         }
     };
